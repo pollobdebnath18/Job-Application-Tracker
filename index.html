@@ -20,6 +20,14 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+    <!-- font awesome cdn  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
       body {
         font-family: "Inter", sans-serif;
@@ -27,6 +35,361 @@
     </style>
   </head>
   <body>
-   
+    <header class="w-[80%] mx-auto mt-4">
+      <div>
+        <h1 class="text-3xl font-bold">Job Application Tracker</h1>
+      </div>
+      <div class="grid grid-cols-3 gap-10 mt-6">
+        <div class="bg-gray-100 shadow p-5">
+          <p class="">Total</p>
+          <p>0</p>
+        </div>
+        <div class="bg-gray-100 shadow p-5">
+          <p>Interview</p>
+          <p class="text-[#10B981]">0</p>
+        </div>
+        <div class="bg-gray-100 shadow p-5">
+          <p>Rejected</p>
+          <p class="text-[#EF4444]">0</p>
+        </div>
+      </div>
+    </header>
+    <main class="w-[80%] mx-auto my-10">
+      <div class="flex justify-between items-center">
+        <h1 class="text-2xl font-bold mb-4">Available Jobs</h1>
+        <p>10 Jobs</p>
+      </div>
+      <div class="flex gap-4 mb-5">
+        <button class="btn btn-primary">All</button>
+        <button class="btn btn-white">Interview</button>
+        <button class="btn">Rejected</button>
+      </div>
+      <!-- Filtered Section -->
+      <section id="filtered-section"></section>
+      <!-- cards section -->
+      <section id="allCards-section">
+        <!-- card 1 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">Brain Station 23</h1>
+              <p class="position text-sm">Software Engineer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 2 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">
+                Datasoft Systems Bangladesh Ltd
+              </h1>
+              <p class="position text-sm">Backend Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Creates and maintains the server, database, and application logic
+              that power websites or apps.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">LEADS Corporation</h1>
+              <p class="position text-sm">Fronted Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Builds and styles the user interface of websites or apps, ensuring
+              a smooth and responsive user experience.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 4 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">Therap (Bangladesh) Ltd</h1>
+              <p class="position text-sm">Full Stack Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Handles both frontend and backend development, building complete,
+              end-to-end web applications
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 5 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">REVE Systems Bangladesh</h1>
+              <p class="position text-sm">Cyber Security</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 6 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">Southtech Limited</h1>
+              <p class="position text-sm">Backend Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Creates and maintains the server, database, and application logic
+              that power websites or apps
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 7 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">DataSoft IT Services</h1>
+              <p class="position text-sm">Software Engineer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 8 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">Appifylab</h1>
+              <p class="position text-sm">Full Stack Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Handles both frontend and backend development, building complete,
+              end-to-end web applications
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 9 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">AuthLab</h1>
+              <p class="position text-sm">Software Engineer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Build cross-platform mobile applications using React Native. Work
+              on products used by millions of users worldwide.
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+
+        <!-- card 10 -->
+        <div class="space-y-6 pt-4 bg-gray-100 p-5 mb-10">
+          <div class="flex justify-between items-center">
+            <div>
+              <h1 class="company text-xl font-bold">Lillab</h1>
+              <p class="position text-sm">Frontend Developer</p>
+            </div>
+            <div>
+              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+            </div>
+          </div>
+          <div>
+            <h1>Remote • Full-time • $130,000 - $175,000</h1>
+          </div>
+          <div>
+            <span class="bg-[#EEF4FF] p-3 update">Not Applied</span>
+
+            <p class="description pt-3">
+              Builds and styles the user interface of websites or apps, ensuring
+              a smooth and responsive user experience
+            </p>
+          </div>
+          <div class="flex gap-4">
+            <button class="interview-btn btn text-[#10B981] border-[#10B981]">
+              Interview
+            </button>
+            <button class="rejected-btn btn text-[#EF4444] border-[#EF4444]">
+              Rejected
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
