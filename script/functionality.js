@@ -18,6 +18,7 @@ const rejectedCount = document.getElementById("rejectedCount");
 // console.log(allBtn,interviewFilterBtn,rejectedFilteredBtn);
 
 const tot = document.getElementById("tot");
+
 // Count number of interview or rejected
 function calculateCount() {
   total.innerText = allCardSection.children.length;
@@ -67,7 +68,15 @@ function toggleStyle(id) {
       filteredSection.classList.remove("hidden");
       allCardSection.classList.add("hidden");
       // tot.innerText = interviewList.length;
+      // console.log('hiii interview');
       renderInterview();
+      // mainContainer.addEventListener('click', function(event){
+      //   if(event.target.classList.contains('delete')){
+      //      const deleteCard = event.target.closest('.space-y-6');
+      //      console.log(deleteCard);
+      //      deleteCard.remove();
+      //   }
+      // })
     }
   }
   if (id == "rejected-filter-btn") {
@@ -162,15 +171,20 @@ mainContainer.addEventListener("click", function (event) {
     }
     calculateCount();
   }
-  // for delete item
+  //  delete item in  main container
   if (event.target.classList.contains("delete")) {
     const parentNode = event.target.parentNode.parentNode;
     const card = event.target.closest(".space-y-6");
     const company = parentNode.querySelector(".company").innerText;
     // console.log(company);
-    interviewList = interviewList.filter((item) => item.company !== company);
-    rejectedList = rejectedList.filter((item) => item.company !== company);
-
+    // interviewList = interviewList.filter((item) => item.company !== company);
+    // rejectedList = rejectedList.filter((item) => item.company !== company);
+    if (stat === "interview-filter-btn") {
+      interviewList = interviewList.filter((item) => item.company !== company);
+    }
+    if (stat === "rejected-filter-btn") {
+      rejectedList = rejectedList.filter((item) => item.company !== company);
+    }
     card.remove();
     if (stat === "interview-filter-btn") {
       renderInterview();
@@ -196,7 +210,7 @@ function renderInterview() {
               <p class="position text-sm">${interview.position}</p>
             </div>
             <div>
-              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+              <i class="fa-regular fa-trash-can cursor-pointer delete"></i>
             </div>
           </div>
           <div>
@@ -235,7 +249,7 @@ function renderRejected() {
               <p class="position text-sm">${reject.position}</p>
             </div>
             <div>
-              <i class="fa-regular fa-trash-can cursor-pointer"></i>
+              <i class="fa-regular fa-trash-can cursor-pointer delete"></i>
             </div>
           </div>
           <div>
