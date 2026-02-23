@@ -37,16 +37,32 @@ function toggleStyle(id) {
   if (id == "all-btn") {
     filteredSection.classList.add("hidden");
     allCardSection.classList.remove("hidden");
+    empty.classList.add('hidden');
   }
   if (id == "interview-filter-btn") {
-    filteredSection.classList.remove("hidden");
-    allCardSection.classList.add("hidden");
-    renderInterview();
+    if (interviewList.length === 0) {
+      console.log("this is empty");
+      empty.classList.remove("hidden");
+      filteredSection.classList.add("hidden");
+      allCardSection.classList.add("hidden");
+    } else {
+      empty.classList.add("hidden");
+      filteredSection.classList.remove("hidden");
+      allCardSection.classList.add("hidden");
+      renderInterview();
+    }
   }
   if (id == "rejected-filter-btn") {
-    filteredSection.classList.remove("hidden");
-    allCardSection.classList.add("hidden");
-    renderRejected();
+    if (rejectedList.length === 0) {
+      empty.classList.remove("hidden");
+      filteredSection.classList.add("hidden");
+      allCardSection.classList.add("hidden");
+    } else {
+      empty.classList.add("hidden");
+      filteredSection.classList.remove("hidden");
+      allCardSection.classList.add("hidden");
+      renderRejected();
+    }
   }
 }
 
