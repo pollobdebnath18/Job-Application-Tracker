@@ -24,7 +24,14 @@ function calculateCount() {
   tot.innerText = allCardSection.children.length;
   interviewCount.innerText = interviewList.length;
   rejectedCount.innerText = rejectedList.length;
-  //   console.log(interviewList.length);
+  // console.log(stat);
+  if (stat === "all-btn") {
+    tot.innerText = allCardSection.children.length;
+  } else if (stat === "interview-filter-btn") {
+    tot.innerText = interviewList.length;
+  } else if (stat === "rejected-filter-btn") {
+    tot.innerText = rejectedList.length;
+  }
 }
 calculateCount();
 //Toggling style
@@ -40,10 +47,12 @@ function toggleStyle(id) {
       empty.classList.remove("hidden");
       filteredSection.classList.add("hidden");
       allCardSection.classList.add("hidden");
+      // tot.innerText=total.length;
     } else {
       filteredSection.classList.add("hidden");
       allCardSection.classList.remove("hidden");
       empty.classList.add("hidden");
+      // tot.innerText = total.length;
     }
   }
   if (id == "interview-filter-btn") {
@@ -52,10 +61,12 @@ function toggleStyle(id) {
       empty.classList.remove("hidden");
       filteredSection.classList.add("hidden");
       allCardSection.classList.add("hidden");
+      // tot.innerText = 0;
     } else {
       empty.classList.add("hidden");
       filteredSection.classList.remove("hidden");
       allCardSection.classList.add("hidden");
+      // tot.innerText = interviewList.length;
       renderInterview();
     }
   }
@@ -64,13 +75,16 @@ function toggleStyle(id) {
       empty.classList.remove("hidden");
       filteredSection.classList.add("hidden");
       allCardSection.classList.add("hidden");
+      // tot.innerText = 0;
     } else {
       empty.classList.add("hidden");
       filteredSection.classList.remove("hidden");
       allCardSection.classList.add("hidden");
+      // tot.innerText = rejectedList.length;
       renderRejected();
     }
   }
+  calculateCount();
 }
 
 //All Cards Section
@@ -164,7 +178,6 @@ mainContainer.addEventListener("click", function (event) {
     if (stat === "rejected-filter-btn") {
       renderRejected();
     }
-
     calculateCount();
   }
 });
