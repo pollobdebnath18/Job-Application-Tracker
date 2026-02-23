@@ -6,6 +6,7 @@ const mainContainer = document.querySelector("main");
 const allCardSection = document.getElementById("allCards-section");
 const filteredSection = document.getElementById("filtered-section");
 const empty = document.getElementById("empty");
+const deleteCard = document.querySelector(".delete");
 
 const allBtn = document.getElementById("all-btn");
 const interviewFilterBtn = document.getElementById("interview-filter-btn");
@@ -35,13 +36,19 @@ function toggleStyle(id) {
   document.getElementById(id).classList.add("btn-primary");
   stat = id;
   if (id == "all-btn") {
-    filteredSection.classList.add("hidden");
-    allCardSection.classList.remove("hidden");
-    empty.classList.add('hidden');
+    if (total.length === 0) {
+      empty.classList.remove("hidden");
+      filteredSection.classList.add("hidden");
+      allCardSection.classList.add("hidden");
+    } else {
+      filteredSection.classList.add("hidden");
+      allCardSection.classList.remove("hidden");
+      empty.classList.add("hidden");
+    }
   }
   if (id == "interview-filter-btn") {
     if (interviewList.length === 0) {
-      console.log("this is empty");
+      // console.log("this is empty");
       empty.classList.remove("hidden");
       filteredSection.classList.add("hidden");
       allCardSection.classList.add("hidden");
@@ -139,6 +146,25 @@ mainContainer.addEventListener("click", function (event) {
     if (stat === "interview-filter-btn") {
       renderInterview();
     }
+    calculateCount();
+  }
+  // for delete item
+  if (event.target.classList.contains("delete")) {
+    const parentNode = event.target.parentNode.parentNode;
+    const card = event.target.closest(".space-y-6");
+    const company = parentNode.querySelector(".company").innerText;
+    // console.log(company);
+    interviewList = interviewList.filter((item) => item.company !== company);
+    rejectedList = rejectedList.filter((item) => item.company !== company);
+
+    card.remove();
+    if (stat === "interview-filter-btn") {
+      renderInterview();
+    }
+    if (stat === "rejected-filter-btn") {
+      renderRejected();
+    }
+
     calculateCount();
   }
 });
